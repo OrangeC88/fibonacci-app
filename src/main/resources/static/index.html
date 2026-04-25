@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci App</title>
+</head>
+<body>
+    <h2>Fibonacci Calculator</h2>
+
+    <input type="number" id="num" placeholder="Enter a number" />
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function calculate() {
+            let n = document.getElementById("num").value;
+
+            let response = await fetch(`/fibonacci?n=${n}`);
+            let data = await response.text();
+
+            document.getElementById("result").innerText = "Result: " + data;
+        }
+    </script>
+</body>
+</html>
