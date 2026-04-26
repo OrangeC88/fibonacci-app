@@ -29,7 +29,7 @@ stage('Docker Login') {
 
 stage('Docker Push') {
     steps {
-        bat 'docker push orangec88/fibonacci-app'
+        bat 'docker push xroc88/fibonacci-app'
     }
 }
         stage('Deploy to Kubernetes') {
