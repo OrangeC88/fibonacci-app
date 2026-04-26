@@ -11,7 +11,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat  '"C:\\OrangeC\\Classes\\DevOps\\apache-maven-3.9.12\\bin\\mvn.cmd" test'
             }
         }
 
