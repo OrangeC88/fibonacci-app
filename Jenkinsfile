@@ -34,8 +34,8 @@ stage('Docker Push') {
 }
         stage('Deploy to Kubernetes') {
             steps {
-                bat 'kubectl apply -f deployment.yaml'
-                bat 'kubectl apply -f service.yaml'
+                bat 'set KUBECONFIG=C:\\Users\\Orang\\.kube\\config && kubectl apply -f deployment.yaml --validate=false'
+                bat 'set KUBECONFIG=C:\\Users\\Orang\\.kube\\config && kubectl apply -f service.yaml --validate=false'
             }
         }
     }
