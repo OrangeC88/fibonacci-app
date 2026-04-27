@@ -1,13 +1,21 @@
 package com.example.fibonacci_web;
 
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 public class FibonacciController {
+    private static final Logger logger = LoggerFactory.getLogger(FibonacciController.class);
 
     @GetMapping("/fibonacci")
     public long getFibonacci(@RequestParam int n) {
-        return fibonacci(n);
+    logger.info("Received request for Fibonacci with n = {}", n);
+
+    long result = fibonacci(n);
+
+    logger.info("Returning result: {}", result);
+        return result;
     }
 
     private long fibonacci(int n) {
